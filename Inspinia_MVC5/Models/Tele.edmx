@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TelegramModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHI_TIEU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="THOI_GIAN" Type="datetime" Nullable="false" />
+          <Property Name="HINH_THUC" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="SO_TIEN" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NGUOI_THANH_TOAN" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_SUA" Type="datetime" />
+          <Property Name="NGUOI_TAO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOI_SUA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANG_THAI" Type="int" />
+          <Property Name="XOA" Type="bit" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_KHACH_HANG" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="SO_TIEN_THANH_TOAN" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="GOI" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="NGAY_BAT_DAU" Type="datetime" />
+          <Property Name="NGAY_KET_THUC" Type="datetime" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_SUA" Type="datetime" />
+          <Property Name="NGUOI_TAO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOI_SUA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANG_THAI" Type="int" />
+          <Property Name="XOA" Type="bit" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TeleGroupInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_SUA" Type="datetime" />
+          <Property Name="NGUOI_TAO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOI_SUA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANG_THAI" Type="int" />
+          <Property Name="XOA" Type="bit" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="datetime" />
+          <Property Name="SDT" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="GROUP_ID" Type="nchar" MaxLength="250" Nullable="false" />
+          <Property Name="ACCESS_HASH" Type="nchar" MaxLength="250" Nullable="false" />
+          <Property Name="TITLE" Type="nchar" MaxLength="255" />
+          <Property Name="USERNAME" Type="nchar" MaxLength="250" />
+          <Property Name="PARTICIPANTS_COUNT" Type="int" />
+        </EntityType>
+        <EntityType Name="TeleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VERSION_BLUE_STACKS" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="API_TELE" Type="nvarchar" MaxLength="4000" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IS_ACTIVE" Type="bit" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="datetime" />
+          <Property Name="NGAY_SUA" Type="datetime" />
+          <Property Name="NGUOI_TAO" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOI_SUA" Type="nvarchar" MaxLength="50" />
+          <Property Name="TRANG_THAI" Type="int" />
+          <Property Name="XOA" Type="bit" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="TelegramModelStoreContainer">
+          <EntitySet Name="CHI_TIEU" EntityType="Self.CHI_TIEU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeleGroupInfo" EntityType="Self.TeleGroupInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeleInfo" EntityType="Self.TeleInfo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TelegramModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TelegramEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHI_TIEU" EntityType="TelegramModel.CHI_TIEU" />
+          <EntitySet Name="KHACH_HANG" EntityType="TelegramModel.KHACH_HANG" />
+          <EntitySet Name="TeleGroupInfoes" EntityType="TelegramModel.TeleGroupInfo" />
+          <EntitySet Name="TeleInfoes" EntityType="TelegramModel.TeleInfo" />
+        </EntityContainer>
+        <EntityType Name="CHI_TIEU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="THOI_GIAN" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="HINH_THUC" Type="String" Nullable="false" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="SO_TIEN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="NGUOI_THANH_TOAN" Type="String" Nullable="false" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_SUA" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_TAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="Int32" />
+          <Property Name="XOA" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_KHACH_HANG" Type="String" Nullable="false" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="SO_TIEN_THANH_TOAN" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="GOI" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NGAY_BAT_DAU" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_KET_THUC" Type="DateTime" Precision="3" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_SUA" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_TAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="Int32" />
+          <Property Name="XOA" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TeleGroupInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_SUA" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_TAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="Int32" />
+          <Property Name="XOA" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="DateTime" Precision="3" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="GROUP_ID" Type="String" Nullable="false" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="ACCESS_HASH" Type="String" Nullable="false" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="TITLE" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="PARTICIPANTS_COUNT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TeleInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VERSION_BLUE_STACKS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="API_TELE" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ACTIVE" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="3" />
+          <Property Name="NGAY_SUA" Type="DateTime" Precision="3" />
+          <Property Name="NGUOI_TAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOI_SUA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TRANG_THAI" Type="Int32" />
+          <Property Name="XOA" Type="Boolean" Nullable="false" />
+          <Property Name="NGAY_XOA" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TelegramModelStoreContainer" CdmEntityContainer="TelegramEntities">
+          <EntitySetMapping Name="CHI_TIEU">
+            <EntityTypeMapping TypeName="TelegramModel.CHI_TIEU">
+              <MappingFragment StoreEntitySet="CHI_TIEU">
+                <ScalarProperty Name="NGAY_XOA" ColumnName="NGAY_XOA" />
+                <ScalarProperty Name="XOA" ColumnName="XOA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="NGUOI_THANH_TOAN" ColumnName="NGUOI_THANH_TOAN" />
+                <ScalarProperty Name="SO_TIEN" ColumnName="SO_TIEN" />
+                <ScalarProperty Name="HINH_THUC" ColumnName="HINH_THUC" />
+                <ScalarProperty Name="THOI_GIAN" ColumnName="THOI_GIAN" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACH_HANG">
+            <EntityTypeMapping TypeName="TelegramModel.KHACH_HANG">
+              <MappingFragment StoreEntitySet="KHACH_HANG">
+                <ScalarProperty Name="NGAY_XOA" ColumnName="NGAY_XOA" />
+                <ScalarProperty Name="XOA" ColumnName="XOA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
+                <ScalarProperty Name="NGAY_BAT_DAU" ColumnName="NGAY_BAT_DAU" />
+                <ScalarProperty Name="GOI" ColumnName="GOI" />
+                <ScalarProperty Name="SO_TIEN_THANH_TOAN" ColumnName="SO_TIEN_THANH_TOAN" />
+                <ScalarProperty Name="TEN_KHACH_HANG" ColumnName="TEN_KHACH_HANG" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeleGroupInfoes">
+            <EntityTypeMapping TypeName="TelegramModel.TeleGroupInfo">
+              <MappingFragment StoreEntitySet="TeleGroupInfo">
+                <ScalarProperty Name="PARTICIPANTS_COUNT" ColumnName="PARTICIPANTS_COUNT" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="ACCESS_HASH" ColumnName="ACCESS_HASH" />
+                <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="NGAY_XOA" ColumnName="NGAY_XOA" />
+                <ScalarProperty Name="XOA" ColumnName="XOA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeleInfoes">
+            <EntityTypeMapping TypeName="TelegramModel.TeleInfo">
+              <MappingFragment StoreEntitySet="TeleInfo">
+                <ScalarProperty Name="NGAY_XOA" ColumnName="NGAY_XOA" />
+                <ScalarProperty Name="XOA" ColumnName="XOA" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="NGUOI_SUA" ColumnName="NGUOI_SUA" />
+                <ScalarProperty Name="NGUOI_TAO" ColumnName="NGUOI_TAO" />
+                <ScalarProperty Name="NGAY_SUA" ColumnName="NGAY_SUA" />
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+                <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="API_TELE" ColumnName="API_TELE" />
+                <ScalarProperty Name="VERSION_BLUE_STACKS" ColumnName="VERSION_BLUE_STACKS" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

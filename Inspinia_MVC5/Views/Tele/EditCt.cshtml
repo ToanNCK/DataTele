@@ -1,0 +1,66 @@
+﻿@model Inspinia_MVC5.Models.CHI_TIEU
+@if (Model != null)
+{
+    using (Html.BeginForm("EditCt", "Tele", FormMethod.Post, new { @id = "frmSua" }))
+    {
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title text-uppercase">Khách hàng telegram</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Người thanh toán</label>
+                <input type="text" name="NGUOI_THANH_TOAN" class="form-control" value="@Model.NGUOI_THANH_TOAN" required>
+            </div>
+            <div class="form-group">
+                <label>Số tiền thanh toán</label>
+                <input type="text" name="SO_TIEN" class="form-control touchspin" value="@Model.SO_TIEN" required>
+            </div> 
+            <div class="form-group">
+                <label>Hình thức</label>
+                <input type="text" name="HINH_THUC" class="form-control" value="@Model.HINH_THUC" required>
+            </div>
+            <div class="form-group">
+                <label>Ngày thanh toán</label>
+                <div class="input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input type="text" name="THOI_GIAN" class="form-control" value="@Model.THOI_GIAN.ToString("MM/dd/yyyy")" required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-white pull-right" data-dismiss="modal">Đóng</button>
+            <button class="btn btn-primary pull-right mr-5" type="submit">Lưu</button>
+        </div>
+        @Html.HiddenFor(m => m.ID)
+        @Html.HiddenFor(m => m.NGAY_TAO)
+    }
+}
+
+
+@Styles.Render("~/Content/plugins/chosen/chosenStyles")
+@Styles.Render("~/plugins/touchSpinStyles")
+@Styles.Render("~/plugins/dataPickerStyles")
+
+@Scripts.Render("~/plugins/dataPicker")
+@Scripts.Render("~/plugins/chosen")
+@Scripts.Render("~/plugins/touchSpin")
+<script type="text/javascript">
+
+    $(".touchspin").TouchSpin({
+        verticalbuttons: true,
+        min: 0,
+        max: 1000000000,
+        buttondown_class: 'btn btn-white',
+        buttonup_class: 'btn btn-white'
+    });
+
+    $('.input-group.date').datepicker({
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+    });
+
+</script>
